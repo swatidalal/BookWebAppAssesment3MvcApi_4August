@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BookWebAppAssesmentMVC_4August.Models.Books>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><center>List Of Books</center></h1>
+
+<p>
+     <a asp-action="AddNewBook" class="btn btn-primary">Add New Book</a>
+</p>
+
+    <form asp-action="Search">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+            <input type="search" name="searchString" class="form-control"/>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Search" class="btn btn-warning"/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</form><br />
+
+
+</div>
+  <div class="container">
+  <div class="items-details"> 
+  <div class=" row">
+  @foreach (var item in Model)
+  {
+    <div class="col-md-3">
+    <img src="~/download.jpg" alt="" width="200" height="250"> <br/><br/>
+    @Html.DisplayNameFor(model => model.BookName)  :   @Html.DisplayFor(modelItem => item.BookName)<br/>
+    @Html.DisplayNameFor(model => model.Zoner)  :   @Html.DisplayFor(modelItem => item.Zoner)  <br/>
+    @Html.DisplayNameFor(model => model.ReleaseDate)  :  @Html.DisplayFor(modelItem => item.ReleaseDate)   <br/> 
+    @Html.DisplayNameFor(model => model.Cost)    :   @Html.DisplayFor(modelItem => item.Cost) <br/>
+    <a asp-action="UpdateBook"  class="btn btn-primary" asp-route-id="@item.ID"  >Edit</a> |
+    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.ID">Details</a> |
+    <a asp-action="DeleteBook"class="btn btn-danger" asp-route-id="@item.ID">Delete</a>
+</div>
+  }                 
+  </div>
+  </div>
+  </div>
+</section>
+
+

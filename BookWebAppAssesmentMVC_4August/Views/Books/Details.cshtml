@@ -1,0 +1,65 @@
+﻿@model BookWebAppAssesmentMVC_4August.Models.Books
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1><center>Details</center></h1>
+
+<div>
+ 
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Zoner)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Zoner)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+    </dl>
+</div>
+<br />
+<br />
+<div class=" col-md-12">
+    <div class="row">
+                <div class="col-md-6">
+                    <a><img src="~/download.jpg" alt="" width="400" height="250"> <br/><br/></a>
+                    </div>
+                       <div class="col-md-6">
+                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    </div>
+
+</div>
+<div>
+   
+        <a asp-action="Cart" class="btn btn-primary">Add to Cart</a>
+</div>
+<div>
+    
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
